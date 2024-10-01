@@ -1,5 +1,8 @@
 const star = "\u2B50";
 const movieCardContainer = document.querySelector(".movie-container");
+
+
+
 // Función para renderizar las tarjetas de películas
 function renderMovies(movies) {
   movieCardContainer.innerHTML = "";
