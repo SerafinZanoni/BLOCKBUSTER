@@ -15,7 +15,7 @@
   \******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst renderMovies = __webpack_require__(/*! ./renderMovies */ \"./scripts/renderMovies.js\");\r\n\r\nconst fetchData = (URL) => {\r\n  axios(URL)\r\n    .then((res) => {\r\n      renderMovies(res.data);\r\n    })\r\n    .catch((err) => {\r\n      console.error(`Error al obtener listado de peliculas: ${err}`);\r\n    })\r\n    .finally(() => {\r\n      console.log(\"Proceso terminado\");\r\n    });\r\n};\r\n\r\nmodule.exports = fetchData;\r\n\r\n// Función para obtener las páliculas desde la API usando async/await\r\n\r\n// const fetchData = async (URL) => {\r\n//   try {\r\n//     const {data} = await axios(URL);\r\n//     renderMovies(data);\r\n//   } catch (reason) {\r\n//     console.error(`Error al obtener listado de peliculas: ${reason}`);\r\n//   } finally {\r\n//     console.log(\"Proceso terminado\");\r\n//   }\r\n// }\r\n\r\n// Función para obtener las películas desde la API usando jQuery ajax\r\n\r\n// function fetchMoviesWithJQuery() {\r\n//   $.get(URL, (movies) => {\r\n//     renderMovies(movies);\r\n//   }).fail(() => {\r\n//     console.error(\"Error al obtener las películas\");\r\n//   });\r\n// }\r\n\n\n//# sourceURL=webpack://front/./scripts/fetchData.js?");
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst renderMovies = __webpack_require__(/*! ./renderMovies */ \"./scripts/renderMovies.js\");\r\n\r\n\r\n// Función para obtener las páliculas desde la API con axios\r\nconst fetchData = (URL) => {\r\n  axios(URL)\r\n    .then((res) => {\r\n      renderMovies(res.data);\r\n    })\r\n    .catch((err) => {\r\n      console.error(`Error al obtener listado de peliculas: ${err}`);\r\n    })\r\n    .finally(() => {\r\n      console.log(\"Proceso terminado\");\r\n    });\r\n};\r\n\r\nmodule.exports = fetchData;\r\n\r\n// Función para obtener las páliculas desde la API usando async/await\r\n\r\n// const fetchData = async (URL) => {\r\n//   try {\r\n//     const {data} = await axios(URL);\r\n//     renderMovies(data);\r\n//   } catch (reason) {\r\n//     console.error(`Error al obtener listado de peliculas: ${reason}`);\r\n//   } finally {\r\n//     console.log(\"Proceso terminado\");\r\n//   }\r\n// }\r\n\r\n// Función para obtener las películas desde la API usando jQuery ajax\r\n\r\n// function fetchMoviesWithJQuery() {\r\n//   $.get(URL, (movies) => {\r\n//     renderMovies(movies);\r\n//   }).fail(() => {\r\n//     console.error(\"Error al obtener las películas\");\r\n//   });\r\n// }\r\n\n\n//# sourceURL=webpack://front/./scripts/fetchData.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const URL = \"https://students-api.up.railway.app/movies\";\r\n\r\nconst fetchData = __webpack_require__(/*! ./fetchData */ \"./scripts/fetchData.js\");\r\n\r\n\r\nfetchData(URL);\r\n\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const URL = \"https://students-api.up.railway.app/movies\";\r\n\r\nconst fetchData = __webpack_require__(/*! ./fetchData */ \"./scripts/fetchData.js\");\r\n\r\nfetchData(URL);\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
