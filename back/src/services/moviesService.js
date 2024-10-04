@@ -1,34 +1,35 @@
-const movies = [
-  {
-    id: 1,
-    title: "The Matrix",
-    year: 1999,
-  },
-  {
-    id: 2,
-    title: "The Matrix Reloaded",
-    year: 2003,
-  },
-  {
-    id: 3,
-    title: "The Matrix Revolutions",
-    year: 2003,
-  },
-];
+const axios = require("axios");
+const URL = "https://students-api.up.railway.app/movies";
+const localMovies = [];
+let id = 1;
 
-let id = 4;
 
 module.exports = {
-  getAllMovies: () => {
-    return movies;
+  getAllMovies: async () => {
+    try {
+      const { data } = await axios(URL);
+      const movies = data;
+      const allMovies = [...movies, ...localMovies];
+      return allMovies;
+    } catch (error) {
+      console.log(error.message);
+      throw error;
+    } finally {
+      console.log("Proceso terminado");
+    }
   },
 
-  createMovie: async (title, year) => {
+  createMovie: async (title, year, director, duration, genre, rate, poster) => {
     const newMovie = {
       id: id++,
       title,
       year,
+      director,
+      duration,
+      genre,
+      rate,
+      poster,
     };
-    movies.push(newMovie);
+    localMovies.push(newMovie);
   },
 };
