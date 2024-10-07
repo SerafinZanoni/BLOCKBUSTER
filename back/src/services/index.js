@@ -1,21 +1,46 @@
-// function getAllMovies() {
-//     return [
-//         {
-//             id: 1,
-//             title: "The Matrix",
-//             year: 1999,
-//         },
-//         {
-//             id: 2,
-//             title: "The Matrix Reloaded",
-//             year: 2003,
-//         },
-//         {
-//             id: 3,
-//             title: "The Matrix Revolutions",
-//             year: 2003,
-//         },
-//     ];
-// }
+const axios = require("axios");
+const URL = "https://students-api.up.railway.app/movies";
 
-// module.exports = { getAllMovies };
+const Movie = require("../models/Movie");
+
+
+
+
+
+
+
+module.exports = {
+  getAllMovies: async () => {
+    try {
+      const movies = await Movie.find();
+      return movies;
+    } catch (error) {
+      console.log(error.message);
+      throw error;
+    } finally {
+      console.log("Movies loaded");
+    }
+  },
+
+  createMovie: async (title, year, director, duration, genre, rate, poster) => {
+    const newMovie = {
+      title,
+      year,
+      director,
+      duration,
+      genre,
+      rate,
+      poster,
+    };
+    await Movie.create(newMovie);
+  },
+};
+
+
+
+
+
+
+
+
+

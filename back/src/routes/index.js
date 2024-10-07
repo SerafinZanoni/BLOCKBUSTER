@@ -1,14 +1,12 @@
 const { Router } = require("express");
-const userRouter = require("./userRouter");
-const postRouter = require("./postRouter");
-const moviesRouter = require("./moviesRouter");
+const moviesController = require("../controllers");
+const validateMovie = require("../middlewares/validateMovie");
 
+const moviesRouter = Router();
 
+moviesRouter.get("/", moviesController.getAllMovies);
+moviesRouter.post("/", validateMovie, moviesController.createMovie);
 
-const router = Router();
+moviesRouter.use("/movies", moviesRouter);
 
-router.use("/users", userRouter);
-router.use("/posts", postRouter);
-router.use("/movies", moviesRouter);
-
-module.exports = router;
+module.exports = moviesRouter;
