@@ -1,5 +1,8 @@
-const URL = "https://students-api.up.railway.app/movies";
 
-const fetchData = require("./fetchData");
-
-fetchData(URL);
+if (window.location.href.includes("movies.html")) {
+  require("./createMovie");
+} else {
+  const { fetchData } = require("./fetchData");
+  const URL = "http://localhost:3000/movies";
+  fetchData(URL);
+}

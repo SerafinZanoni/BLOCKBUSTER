@@ -25,10 +25,13 @@ header {
 
 header h1 {
   font-family: "Bebas Neue", sans-serif;
+  
+  animation: colorChange 10s infinite;
   font-size: 56px;
   margin: 0;
   font-weight: 600;
   letter-spacing: 2px;
+
 }
 
 nav ul {
@@ -59,7 +62,6 @@ main {
   background-image: url("https://www.thefpsreview.com/wp-content/uploads/2020/08/regal-cinemas-16-1024x576.jpg");
   background-size: cover;
   background-position: center;
- 
 }
 
 p {
@@ -157,7 +159,6 @@ footer {
   color: #ddd;
 }
 
-
 form label {
   color: #ccc;
 }
@@ -166,3 +167,57 @@ form h2 {
   color: #ffffff;
 }
 
+/* Estilo general para el contenedor de la película */
+.trailer-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título principal */
+.movie-title-main {
+  font-size: 36px;
+  color: #fff;
+  border-bottom: #ccc 1px solid;
+}
+
+
+.movie-title {
+  font-size: 48px;
+
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.movie-info {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ddd;
+  padding: 0%;
+}
+
+.movie-trailer {
+  width: 100%;
+  max-width: 800px;
+  height:   450px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@keyframes colorChange {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #ffffff60;
+  }
+  100% {
+    color: #1b1b1b;
+  }
+}

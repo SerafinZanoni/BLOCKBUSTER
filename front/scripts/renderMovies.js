@@ -20,6 +20,10 @@ function renderMovies(movies) {
     movieTitle.textContent = movie.title;
     movieCard.appendChild(movieTitle);
 
+    const movieDirector = document.createElement("p");
+    movieDirector.textContent = `Director: ${movie.director}`;
+    movieCard.appendChild(movieDirector);
+
     const movieRate = document.createElement("p");
     movieRate.textContent = `Rating: ${movie.rate} ${star}`;
     movieCard.appendChild(movieRate);
@@ -28,4 +32,4 @@ function renderMovies(movies) {
   });
 }
 
-module.exports = renderMovies;
+module.exports = {renderMovies};
