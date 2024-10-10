@@ -1,4 +1,3 @@
-
 const validateMovie = (req, res, next) => {
   const { title, year, director, duration, genre, rate, poster } = req.body;
 
@@ -16,11 +15,12 @@ const validateMovie = (req, res, next) => {
 
   // Si hay errores, devolver una respuesta con los errores
   if (errors.length > 0) {
+    console.log("Movie not created");
     return res.status(400).json({ errors });
   }
 
   console.log("Movie created successfully");
-  next(); // Si no hay errores, continúa al siguiente middleware o controlador
+  next();
 };
 
 module.exports = validateMovie;

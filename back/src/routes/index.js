@@ -4,9 +4,11 @@ const validateMovie = require("../middlewares/validateMovie");
 
 const moviesRouter = Router();
 
-moviesRouter.get("/", moviesController.getAllMovies);
-moviesRouter.post("/", validateMovie, moviesController.createMovie);
+moviesRouter.get("/movies", moviesController.getAllMovies);
+moviesRouter.post("/movies", validateMovie, moviesController.createMovie);
 
-moviesRouter.use("/movies", moviesRouter);
+// moviesRouter.get("/title/:title", moviesController.findMovieByTitle);
+// moviesRouter.get("/:id", moviesController.getMovieById);
+
 
 module.exports = moviesRouter;
