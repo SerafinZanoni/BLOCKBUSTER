@@ -16,6 +16,11 @@ Blockbuster es una aplicación web para la gestión de películas, donde los usu
 - **Estilos**: Bootstrap para diseño responsivo.
 - **Módulos**: Utilización de módulos ES6 con `import/export`.
 
+- ### **Imagenes**
+
+![Home](public/BBHOME.png)
+![Form](public/BBFORM.png)
+
 ## Requisitos
 - Node.js (v14 o superior)
 - npm (v6 o superior)
@@ -83,3 +88,5 @@ blockbuster-movies/
 ├── webpack.config.js        # Configuración de Webpack
 ├── package.json             # Archivo de configuración de npm
 └── README.md                # Este archivo
+
+
